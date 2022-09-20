@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "web-service-course-project"
+version = "0.1.0"
+description = ""
+authors = ["Artem Deryavskiy <strelok.onaga@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "web_service_course_project"}]
+
+[tool.poetry.dependencies]
+python = "3.10.4"
+fastapi = "^0.85.0"
+pydantic = "^1.10.2"
+pytest = "^7.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
