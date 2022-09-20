@@ -38,7 +38,8 @@ async def read_item(item_id: str, q: str | None = None, short: bool = False):
         q (str | None, optional): optional query parameter
         short (bool, optional): optional query parameter
     Returns:
-        dict: {"item_id": item_id} and {"q": q} if q is not None and {"description": message}
+        dict: {"item_id": item_id} and {"q": q} if q is not None
+            and {"description": message}
     """
     item = {"item_id": item_id}
     if q:
