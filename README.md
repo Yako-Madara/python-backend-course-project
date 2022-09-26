@@ -4,14 +4,12 @@
 Установка и запуск:
 Для установки необходим менеджер пакетов [poetry](https://python-poetry.org/)
 
-```
-conda create -n env_name python=3.10.4
+```conda create -n env_name python=3.10.4```
 
-conda activate env_name   
+```conda activate env_name```
 
-poetry install     
+```poetry install```
 
-cd app
+```cd app```
 
-poetry run uvicorn main:api
-```
+```poetry run uvicorn main:api```
