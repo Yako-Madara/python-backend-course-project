@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException, status
 from models.user import User, UserCreate
 
-from app.db import db
+from database.db import db
 
 router = APIRouter()
 

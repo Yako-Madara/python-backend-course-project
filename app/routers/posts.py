@@ -1,9 +1,8 @@
 from typing import List
 
+from database.db import db
 from fastapi import APIRouter, HTTPException, status
-
 from models.post import Post, PostCreate
-from app.db import db
 
 router = APIRouter()
 
