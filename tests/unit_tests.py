@@ -1,6 +1,8 @@
 import httpx
 import pytest
+import pytest_asyncio
 from fastapi import status
+from asgi_lifespan import LifespanManager
 
 from app.main import app
 from app.models.user import User
@@ -20,6 +22,13 @@ def fill_db():
         2: Post(id=2, user=2, title="Post 2"),
         3: Post(id=3, user=3, title="Post 3"),
     }
+
+
+@pytest_asyncio.fixture
+async def client():
+    async with LifespanManager(app):
+        async with httpx.AsyncClient(app=app, base_url="http://app.io") as client:
+            yield client
 
 
 @pytest.mark.fastapi(app=app)
