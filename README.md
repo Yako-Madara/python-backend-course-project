@@ -13,3 +13,9 @@
 ```cd app```
 
 ```poetry run uvicorn app:app```
+
+Запуск тестов
+
+* Модульные: ```poetry run pytest tests/unit_tests.py```
+
+* Интеграционные:
