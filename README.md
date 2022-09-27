@@ -12,4 +12,4 @@
 
 ```cd app```
 
-```poetry run uvicorn main:api```
+```poetry run uvicorn app:app```
