@@ -12,7 +12,7 @@
 
 ```cd app```
 
-```poetry run uvicorn app:app```
+```poetry run uvicorn main:app```
 
 Запуск тестов
 
