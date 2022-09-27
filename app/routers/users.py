@@ -1,9 +1,9 @@
 from typing import List
 
 from fastapi import APIRouter, HTTPException, status
-from models.user import User, UserCreate
+from app.models.user import User, UserCreate
 
-from database.db import db
+from app.database.db import db
 
 router = APIRouter()
 
