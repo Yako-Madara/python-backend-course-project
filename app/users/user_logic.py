@@ -1,15 +1,11 @@
 from typing import List
 
-from fastapi import APIRouter, HTTPException, status
-from app.models.user import User, UserCreate
-
-from app.database.db import db
-
-router = APIRouter()
+from database.db import db
+from fastapi import HTTPException, status
+from models.user import User, UserCreate
 
 
-@router.get("/")
-async def all() -> List[User]:
+def get_all() -> List[User]:
     """Return list of all users.
 
     Returns:
@@ -18,8 +14,7 @@ async def all() -> List[User]:
     return list(db.users.values())
 
 
-@router.get("/{id}")
-async def get(id: int) -> User:
+def get_user(id: int) -> User:
     """Return user by requested id.
 
     Args:
@@ -37,8 +32,7 @@ async def get(id: int) -> User:
         raise HTTPException(status.HTTP_404_NOT_FOUND)
 
 
-@router.post("/", status_code=status.HTTP_201_CREATED)
-async def create(user_create: UserCreate) -> User:
+def create_user(user_create: UserCreate) -> User:
     """Creates a new user.
 
     Args:
@@ -53,8 +47,7 @@ async def create(user_create: UserCreate) -> User:
     return user
 
 
-@router.delete("/{id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete(id: int) -> None:
+def delete_user(id: int) -> None:
     """Deleting a user.
 
     Args:

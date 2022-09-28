@@ -1,7 +1,7 @@
 from typing import Dict
 
-from app.models.user import User
-from app.models.post import Post
+from models.post import Post
+from models.user import User
 
 
 class Database:
