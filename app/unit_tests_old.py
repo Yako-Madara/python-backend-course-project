@@ -1,13 +1,12 @@
 import httpx
 import pytest
 import pytest_asyncio
-from fastapi import status
 from asgi_lifespan import LifespanManager
-
-from app.main import app
-from app.models.user import User
-from app.models.post import Post
-from app.database.db import db
+from database.db import db
+from fastapi import status
+from main import app
+from models.post import Post
+from models.user import User
 
 
 @pytest.fixture(autouse=True)
