@@ -1,11 +1,12 @@
 from typing import List
 
-from database.db import db
 from fastapi import HTTPException, status
-from models.post import Post, PostCreate
+
+from app.database.db import db
+from app.models.post import Post, PostCreate
 
 
-def get_all() -> List[Post]:
+def get_all_posts() -> List[Post]:
     """Return list of all posts.
 
     Returns:

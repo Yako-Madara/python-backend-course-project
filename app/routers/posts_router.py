@@ -1,13 +1,13 @@
 from fastapi import APIRouter, status
 from models.post import PostCreate
-from posts.post_logic import create_post, delete_post, get_all, get_post
+from posts.post_logic import create_post, delete_post, get_all_posts, get_post
 
 router = APIRouter()
 
 
 @router.get("/")
 async def all():
-    return get_all()
+    return get_all_posts()
 
 
 @router.get("/{id}")

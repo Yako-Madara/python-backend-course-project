@@ -1,13 +1,13 @@
 from fastapi import APIRouter, status
 from models.user import User, UserCreate
-from users.user_logic import create_user, delete_user, get_all, get_user
+from users.user_logic import create_user, delete_user, get_all_users, get_user
 
 router = APIRouter()
 
 
 @router.get("/")
 async def all():
-    return get_all()
+    return get_all_users()
 
 
 @router.get("/{id}")

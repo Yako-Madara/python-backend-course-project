@@ -1,11 +1,12 @@
 from typing import List
 
-from database.db import db
 from fastapi import HTTPException, status
-from models.user import User, UserCreate
+
+from app.database.db import db
+from app.models.user import User, UserCreate
 
 
-def get_all() -> List[User]:
+def get_all_users() -> List[User]:
     """Return list of all users.
 
     Returns:
