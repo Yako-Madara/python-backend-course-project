@@ -11,7 +11,7 @@ class TematicFeedService(tematic_feed_pb2_grpc.RecommendationsServicer):
         if request.category not in posts_by_category:
             context.abort(grpc.StatusCode.NOT_FOUND, "Category not found")
         posts_for_category = posts_by_category[request.category]
-        num_results = min(request.max_results, len(posts_for_category))
-        posts_to_recommend = random.sample(posts_for_category, num_results)
+        num_results = max(min(request.max_results, len(posts_for_category)))
+        posts_to_feed = random.sample(posts_for_category, num_results)
 
-        return FeedResponse(recommendations=posts_to_recommend)
+        return FeedResponse(recommendations=posts_to_feed)
