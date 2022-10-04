@@ -25,7 +25,7 @@ def get_feed_for_category(category: str):
     Returns: страница с постами на определенную тему
     """
     post_category = categories[category]
-    request = FeedRequest(user_id=1, category=post_category, max_result=3)
+    request = FeedRequest(user_id=1, category=post_category, max_results=3)
     posts_for_feed_response = tematic_feed_client.Recommend(request)
     return render_template(
         "feedpage.html",
