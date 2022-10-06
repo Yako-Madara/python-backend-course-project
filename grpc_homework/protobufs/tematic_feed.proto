@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+
+enum PostCategory {
+    DEVELOPMENT = 0;
+    SCIENCE_FICTION = 1;
+    TESTING = 2;
+}
+
+
+message FeedRequest {
+    int32 user_id = 1;
+    PostCategory category = 2;
+    int32 max_results = 3;
+}
+
+
+message PostFeed {
+    int32 id = 1;
+    string title = 2;
+}
+
+
+message FeedResponse {
+    repeated PostFeed recommendations = 1;
+}
+
+
+service Recommendations {
+    rpc Recommend (FeedRequest) returns (FeedResponse);
+}
